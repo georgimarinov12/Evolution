@@ -593,6 +593,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: {fileID: 2779492286160841782, guid: 2b5b49340f5f7bb4bbbf91dc6df94b9a, type: 3}
   enemy: {fileID: 5706605745550203182, guid: 5c38f2fedc265b546920c49adcc83ac0, type: 3}
+  prefabs:
+  - {fileID: 5706605745550203182, guid: 50d6da759a0502e439378ecfccc112f3, type: 3}
+  - {fileID: 5706605745550203182, guid: 3cd7a853f6466554b869e2ce28215cfd, type: 3}
+  - {fileID: 5706605745550203182, guid: 9048bbbd40bbf3f42963ffa8764dcd05, type: 3}
+  - {fileID: 5706605745550203182, guid: 0805e620e4e910c4d8e60917fa3dc385, type: 3}
   max: {x: 120, y: 55}
   min: {x: -120, y: -55}
 --- !u!4 &644733031
@@ -846,7 +851,7 @@ MonoBehaviour:
   size: 1
   food: 0
   deadFish: {fileID: 78653720620179261, guid: 745ef78c2632e5a4cbc77c7c2140fee7, type: 3}
-  neededFood: 02000000050000000a0000000f0000001400000019000000
+  neededFood: 02000000050000000a0000000f000000
   sizeText: {fileID: 1330328328}
   nowFoodText: {fileID: 254754489}
   maxFoodText: {fileID: 1589701276}

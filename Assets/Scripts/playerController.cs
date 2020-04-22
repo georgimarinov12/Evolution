@@ -28,6 +28,12 @@ public class playerController : MonoBehaviour
 		SceneManager.LoadScene("Game Over");
 	}
 
+	public void LoadWinScene()
+	{
+		Debug.Log("Win called");
+		SceneManager.LoadScene("WinScene");
+	}
+
 	public void Die()
 	{
 		gameObject.SetActive(false);
@@ -52,8 +58,13 @@ public class playerController : MonoBehaviour
 			size++;
 			animator.SetInteger("Size", (animator.GetInteger("Size") + 1));
 		}
-	}
 
+		if (size >= neededFood.Length + 1)
+		{
+			Invoke("LoadWinScene", 2);
+		}
+
+	}
 
 
 	private IEnumerator Pause(int p)
@@ -127,7 +138,7 @@ public class playerController : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		Debug.Log("Hit");
-		if(collision.gameObject.GetComponent<MovingDog>().size[collision.gameObject.GetComponent<MovingDog>().randomEnemy] > size)
+		if(collision.gameObject.GetComponent<MovingDog>().size > size)
 		{
 			size--;
 			food = neededFood[size-1] - 1;
@@ -137,7 +148,7 @@ public class playerController : MonoBehaviour
 		}
 		else
 		{
-			food += collision.gameObject.GetComponent<MovingDog>().food[collision.gameObject.GetComponent<MovingDog>().randomEnemy];
+			food += collision.gameObject.GetComponent<MovingDog>().food;
 			Debug.Log("Food = " + food);
 			gameObject.GetComponent<TimerController>().timer += 10;
 			gameObject.GetComponent<TimerController>().SumWith(10);

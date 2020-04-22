@@ -10,33 +10,29 @@ using UnityEngine;
 
 
 public class MovingDog : MonoBehaviour
-{       
-	public GameObject[] bloodEffect;
-	public float[] speed;
-	public int[] size;
-	public int[] food;
-	public float startWaitTime;                 //start countdown till move to next spot
-	public Sprite[] enemySprite;
+{
+	public RandomEnemySpawner spawner;
+	public GameObject bloodEffect;
+	public float speed;
+	public int size;
+	public int food;
+	public float startWaitTime;  //start countdown till move to next spot
+
 
 	public Transform[] moveSpots = new Transform[2];               //patrol spots
 	private Rigidbody2D rb;
 	//private Animator anim;
 	private int randomSpot;                     //number of patrol spots 
 	private float waitTime;                     //how long enemy stays at patrol spot for
-	public int randomEnemy;
 
-	void Awake()
-	{
-		randomEnemy = Random.Range(0, enemySprite.Length);
-	}
+
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		waitTime = startWaitTime; //make waittime equal to startwaittime
-		//anim = GetComponent<Animator>();
+								  //anim = GetComponent<Animator>();
 		randomSpot = Random.Range(0, moveSpots.Length); //choose a random first spot 
-		GetComponent<SpriteRenderer>().sprite = enemySprite[randomEnemy];
 	}
 
 	// Update is called once per frame
@@ -51,7 +47,7 @@ public class MovingDog : MonoBehaviour
 			FlipSprite();
 		}
 
-		transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed[randomEnemy] * Time.deltaTime); //move toward first patrol area
+		transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime); //move toward first patrol area
 
 
 		if (Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.5f) //asks if patrol point is further that .5f away from enemy
@@ -81,6 +77,7 @@ public class MovingDog : MonoBehaviour
 	{
 		Destroy(gameObject);
 		//Instantiate(bloodEffect[randomEnemy], transform.position, Quaternion.identity);
+		//spawner.Spawn(Random.Range(100, 1000));
 		Debug.Log("Damage Taken");
 	}
 }
