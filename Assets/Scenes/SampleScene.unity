@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -88,6 +95,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -430,9 +438,10 @@ Camera:
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.9058824, g: 0.86666673, b: 0.41960788, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -508,7 +517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 62, y: 23}
+  m_AnchoredPosition: {x: 62, y: -3.7}
   m_SizeDelta: {x: 123, y: 52.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531138639
@@ -584,6 +593,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   point: {fileID: 2779492286160841782, guid: 2b5b49340f5f7bb4bbbf91dc6df94b9a, type: 3}
   enemy: {fileID: 5706605745550203182, guid: 5c38f2fedc265b546920c49adcc83ac0, type: 3}
+  prefabs:
+  - {fileID: 5706605745550203182, guid: 50d6da759a0502e439378ecfccc112f3, type: 3}
+  - {fileID: 5706605745550203182, guid: 3cd7a853f6466554b869e2ce28215cfd, type: 3}
+  - {fileID: 5706605745550203182, guid: 9048bbbd40bbf3f42963ffa8764dcd05, type: 3}
+  - {fileID: 5706605745550203182, guid: 0805e620e4e910c4d8e60917fa3dc385, type: 3}
   max: {x: 120, y: 55}
   min: {x: -120, y: -55}
 --- !u!4 &644733031
@@ -634,10 +648,10 @@ RectTransform:
   m_Father: {fileID: 2013367538}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 57, y: 129}
-  m_SizeDelta: {x: 123, y: 52.2}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 57, y: -87}
+  m_SizeDelta: {x: 123, y: 52.200012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &798106882
 MonoBehaviour:
@@ -837,7 +851,7 @@ MonoBehaviour:
   size: 1
   food: 0
   deadFish: {fileID: 78653720620179261, guid: 745ef78c2632e5a4cbc77c7c2140fee7, type: 3}
-  neededFood: 02000000050000000a0000000f0000001400000019000000
+  neededFood: 02000000050000000a0000000f000000
   sizeText: {fileID: 1330328328}
   nowFoodText: {fileID: 254754489}
   maxFoodText: {fileID: 1589701276}
@@ -888,10 +902,10 @@ RectTransform:
   m_Father: {fileID: 2013367538}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 62, y: 75}
-  m_SizeDelta: {x: 123, y: 52.2}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 62, y: -141}
+  m_SizeDelta: {x: 123, y: 52.200012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1025626285
 MonoBehaviour:
@@ -1572,7 +1586,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
