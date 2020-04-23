@@ -2,3 +2,13 @@ language: generic
 
 rvm:
 - 2.1.2
+
+before_install:
+- chmod a+x ./TravisScripts/install.sh
+- chmod a+x ./TravisScripts/build.sh
+
+install:
+- ./TravisScripts/install.sh
+
+script:
+- ./TravisScripts/build.sh
