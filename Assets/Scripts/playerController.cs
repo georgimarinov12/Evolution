@@ -56,6 +56,7 @@ public class playerController : MonoBehaviour
 		{
 			Debug.Log("Size = " + size);
 			size++;
+			speed++;
 			animator.SetInteger("Size", (animator.GetInteger("Size") + 1));
 		}
 
@@ -141,6 +142,7 @@ public class playerController : MonoBehaviour
 		if(collision.gameObject.GetComponent<MovingDog>().size > size)
 		{
 			size--;
+			speed--;
 			food = neededFood[size-1] - 1;
 			animator.SetInteger("Size", (animator.GetInteger("Size") - 1));
 			
@@ -154,6 +156,7 @@ public class playerController : MonoBehaviour
 			gameObject.GetComponent<TimerController>().SumWith(10);
 
 			collision.gameObject.GetComponent<MovingDog>().TakeDamage();
+			
 		}
 	}
 

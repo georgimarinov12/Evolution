@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea275f5c2f1b5b40b1ab421c9119258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
+  spawner: {fileID: 4706784664217551168, guid: fe001190afecc4d4d8f90dd425194706, type: 3}
   bloodEffect: {fileID: 0}
   speed: 4
   size: 1

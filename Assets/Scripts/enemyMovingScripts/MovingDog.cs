@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class MovingDog : MonoBehaviour
 {
-	public RandomEnemySpawner spawner;
+	public GameObject spawner;
 	public GameObject bloodEffect;
 	public float speed;
 	public int size;
@@ -77,7 +77,7 @@ public class MovingDog : MonoBehaviour
 	{
 		Destroy(gameObject);
 		//Instantiate(bloodEffect[randomEnemy], transform.position, Quaternion.identity);
-		//spawner.Spawn(Random.Range(100, 1000));
+		spawner.GetComponent<RandomEnemySpawner>().Spawn(Random.Range(100, 1000));
 		Debug.Log("Damage Taken");
 	}
 }

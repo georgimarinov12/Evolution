@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4706784664217551168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4706784664217551170}
+  - component: {fileID: 4706784664217551171}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4706784664217551170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706784664217551168}
+  m_LocalRotation: {x: -0, y: -0, z: -0.98980016, w: 0.14246307}
+  m_LocalPosition: {x: -51.655468, y: -22.197968, z: 10.7375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4706784664217551171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4706784664217551168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90316adf4b2bd1f47907f0baadc34a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point: {fileID: 2779492286160841782, guid: 2b5b49340f5f7bb4bbbf91dc6df94b9a, type: 3}
+  enemy: {fileID: 5706605745550203182, guid: 5c38f2fedc265b546920c49adcc83ac0, type: 3}
+  prefabs:
+  - {fileID: 5706605745550203182, guid: 50d6da759a0502e439378ecfccc112f3, type: 3}
+  - {fileID: 5706605745550203182, guid: 3cd7a853f6466554b869e2ce28215cfd, type: 3}
+  - {fileID: 5706605745550203182, guid: 9048bbbd40bbf3f42963ffa8764dcd05, type: 3}
+  - {fileID: 5706605745550203182, guid: 0805e620e4e910c4d8e60917fa3dc385, type: 3}
+  - {fileID: 5706605745550203182, guid: 77d45df9184d81a4faaf3059d22aba36, type: 3}
+  max: {x: 120, y: 55}
+  min: {x: -120, y: -55}

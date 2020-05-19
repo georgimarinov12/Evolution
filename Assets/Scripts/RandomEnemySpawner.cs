@@ -55,7 +55,7 @@ public class RandomEnemySpawner : MonoBehaviour
 			en.GetComponent<MovingDog>().moveSpots[1] = point1.transform;
 		}
 
-
+		Debug.Log("Spawned with " + num);
 	}
 }
 
